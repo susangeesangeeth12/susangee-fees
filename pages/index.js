@@ -141,35 +141,28 @@ export default function Home() {
                   <div>
                     <div>
                       <div class="overflow-hidden">
-                        <table>
-                          <thead>
-                            <tr>
-                              <th scope="col" class=" px-3 py-4">
-                                Name
-                              </th>
-                              <th scope="col" class=" px-3 py-4">
-                                Date
-                              </th>
-                              <th scope="col" class=" px-3 py-4">
-                                Rs
-                              </th>
-                            </tr>
-                          </thead>
+                        <table class="table-auto">
+                          <thead></thead>
                           <tbody>
                             {contactDetail.map((contact, index) => (
-                              <tr key={contact.id}>
-                                <td>{contact.fullName}</td>
-                                <td class="whitespace-nowrap px-6 py-4">
+                              <tr
+                                key={contact.fullName}
+                                className={`${
+                                  index % 2 === 0 ? "bg-gray-100" : "bg-white"
+                                }`}
+                              >
+                                <td className="text-sm">{contact.fullName}</td>
+                                <td class="whitespace-nowrap px-6 py-4 text-sm">
                                   {contact.email}
                                 </td>
-                                <td>{contact.phone}</td>
-                                <td>
+                                <td className="text-sm">{contact.phone}</td>
+                                <td className="text-sm">
                                   <button
-                                    type="button"
                                     onClick={() => removeItem(index)}
-                                    class="  px-4 py-2 bg-transparent hover:bg-red-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                                    type="button"
+                                    class="  text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-1 py-1.5 text-center mr-1 mb-1 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                                   >
-                                    Delete
+                                    DEL
                                   </button>
                                 </td>
                               </tr>
@@ -185,8 +178,6 @@ export default function Home() {
                 <div></div>
                 <div>{""}</div>
               </div>
-              <p align="center">Web App @ Dinith Dissanayaka</p>
-              <p align="center">&copy; 2022</p>
             </div>
           </div>
         </div>
